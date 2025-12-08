@@ -4,6 +4,13 @@ Ejercicio de uso de Gorilla web toolkit en Go
 
 https://gorilla.github.io/
 
+# Dependencias
+
+Paquete gorilla mux, en la terminal ubicados en el directorio del proyecto:
+
+go get github.com/gorilla/mux
+
+
 # Ejecutar proyecto
 
 Iniciar servicio -> En terminal 1:
@@ -32,4 +39,6 @@ curl http://localhost:3333/cursos
 Se verifica en terminal 1 mientras se ejecuta el programa:
 
 got /cursos
+
+
 
