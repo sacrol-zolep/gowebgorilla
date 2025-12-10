@@ -23,14 +23,46 @@ Ctrl + C
 
 # Prueba incial 
 
-- Verificar endpint usuarios -> En terminal 2:
+- Verificar endpoint usuarios
+
+Metodo GET En terminal 2:
 
 curl http://localhost:3333/usuarios
 
 Se verifica en terminal 1 mientras se ejecuta el programa:
 
-got /usuarios
+Consultar todo usuario
 
+Metodo POST En terminal 2:
+
+curl -X POST http://localhost:3333/usuarios
+
+Se verifica en terminal 1 mientras se ejecuta el programa:
+
+Crear usuario en terminal 2:
+
+curl -X POST -d @crearjs.json http://localhost:3333/usuarios
+
+Se verifica en terminal 1 mientras se ejecuta el programa:
+
+{Juan Perez jp@test.com 33114400}
+
+
+Metodo PATCH En terminal 2:
+
+curl -X PATCH http://localhost:3333/usuarios
+
+Se verifica en terminal 1 mientras se ejecuta el programa:
+
+Actualizar usuario
+
+Metodo DELETE En terminal 2:
+
+curl -X DELETE http://localhost:3333/usuarios
+
+Se verifica en terminal 1 mientras se ejecuta el programa:
+
+Eliminar usuario
 
 - Verificar endpint cursos -> En terminal 2:
 
