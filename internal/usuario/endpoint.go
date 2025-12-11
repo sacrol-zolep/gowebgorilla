@@ -23,6 +23,10 @@ type (
 		Correo   string `json:"correo"`
 		Telefono string `json:"telefono"`
 	}
+
+	ErrorResp struct {
+		Error string `json:"error"`
+	}
 )
 
 func MakeEndpoints() Endpoints {
@@ -43,8 +47,22 @@ func makeCreateEndpoint() Controller {
 
 		if err != nil {
 			w.WriteHeader(400)
+			json.NewEncoder(w).Encode(ErrorResp{"Request formato invalido"})
 			return
 		}
+
+		if req.Nombre == "" {
+			w.WriteHeader(400)
+			json.NewEncoder(w).Encode(ErrorResp{"Nombre es requerido"})
+			return
+		}
+
+		if req.Apellido == "" {
+			w.WriteHeader(400)
+			json.NewEncoder(w).Encode(ErrorResp{"Apellido es requerido"})
+			return
+		}
+
 		fmt.Println(req)
 		json.NewEncoder(w).Encode(req)
 	}
