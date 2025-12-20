@@ -16,7 +16,8 @@ func main() {
 
 	port := "3333"
 
-	usuarioEnd := usuario.MakeEndpoints()
+	userServ := usuario.NewService()
+	usuarioEnd := usuario.MakeEndpoints(userServ)
 
 	router.HandleFunc("/usuarios", usuarioEnd.GetAll).Methods("GET")
 	router.HandleFunc("/usuarios", usuarioEnd.Create).Methods("POST")
